@@ -6,6 +6,7 @@
 
 ```
 experiments/     实验代码,每个实验独立成文件
+notes/           学习笔记
 CHANGELOG.md     改动记录
 ```
 
