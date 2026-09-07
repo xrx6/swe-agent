@@ -1,27 +1,33 @@
 # swe-agent
 
-AI Agent 学习与实验仓库。GitHub 上只有代码:小实验、脚本、以及以后每晚 19:55 时段动手写的主项目。
+基于大语言模型的 AI Agent 学习与实验仓库,围绕工具调用(Tool Use)、Agent 循环、环境交互等方向做渐进式实验与项目实践。
 
-## 结构
+## 目录结构
 
-- `experiments/` 跟教程敲的代码、小实验
-- 以后主项目成型了,单独开一个 `project/` 或独立仓库
+```
+experiments/     实验代码,每个实验独立成文件
+CHANGELOG.md     改动记录
+```
 
-## 提交(10 秒)
+## 环境要求
 
-在本文件夹右键 → Git Bash Here:
+- Python 3.10+
+- 依赖安装:`pip install openai`
 
-    git add -A
-    git commit -m "一句话说明做了什么"
-    git push
+## 快速开始
 
-## 红线:密钥永远不进仓库
+1. 复制 `.env.example` 为 `.env`(已被 .gitignore 排除,不入仓库),填入你的密钥:
 
-调用大模型的 API key(OpenAI / GLM / Anthropic 等)一律写在 `.env` 文件里(已被 `.gitignore` 排除),代码用环境变量读取,绝不写死在代码里。
-万一不小心提交过密钥:立刻去平台吊销重发,再来找我帮你清理历史。
+   ```
+   GLM_API_KEY=your-api-key
+   ```
 
-## 和 daily 打卡的分工
+2. 运行实验:
 
-- 11:10 学概念、读文档 → 笔记留在本地,不进这个仓库
-- 19:55 动手写代码 → 提交到这里,绿格子亮
-- 这个仓库的提交本身就是 AI Agent 学习的完成证明,和 leetcode 仓库的格子累加在同一张贡献图上
+   ```bash
+   python experiments/my-agent.py
+   ```
+
+## 当前进度
+
+- **my-agent.py** —— Agent 基础工具集:模型对话封装、Shell 命令执行、文件读写、代码内搜索
